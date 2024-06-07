@@ -5,43 +5,43 @@ import javax.frame.tools.mybatis.model.SysNginxLog;
 public interface SysNginxLogMapper {
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int deleteByPrimaryKey(String id);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int insert(SysNginxLog record);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int insertSelective(SysNginxLog record);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     SysNginxLog selectByPrimaryKey(String id);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int updateByPrimaryKeySelective(SysNginxLog record);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int updateByPrimaryKeyWithBLOBs(SysNginxLog record);
 
     /**
      *
-     * @mbggenerated
+     * @mbg.generated
      */
     int updateByPrimaryKey(SysNginxLog record);
 }

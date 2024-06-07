@@ -5,10 +5,7 @@ import org.junit.Test;
 
 import javax.frame.tools.mybatis.util.LombokPlugin;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class CreateH2DataBaseTest {
 
@@ -53,15 +50,15 @@ public class CreateH2DataBaseTest {
     public void init() throws Exception {
         Class.forName("org.h2.Driver");
         try (Connection conn = DriverManager.getConnection(jdbc, "sa", "")) {
-            try (PreparedStatement ps = conn.prepareStatement(dropTable)) {
-                boolean execute = ps.execute();
-                System.out.println("DROP TABLE:" + execute);
+            try (Statement statement = conn.createStatement();) {
+                statement.executeUpdate(dropTable);
+                System.out.println("DROP TABLE FINISH.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            try (PreparedStatement ps = conn.prepareStatement(createTable)) {
-                boolean execute = ps.execute();
-                System.out.println("CREATE TABLE:" + execute);
+            try (Statement statement = conn.createStatement();) {
+                statement.executeUpdate(createTable);
+                System.out.println("CREATE TABLE FINISH.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
