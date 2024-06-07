@@ -18,7 +18,7 @@ public class CreateH2DataBaseTest {
     @Before
     public void setUp() {
 
-        filePath = "D:/tools/mybatis-generate-tools-exart/db/engine";
+        filePath = "D:/tools/mybatis-generate-tools-exart/db/engine;NON_KEYWORDS=YEAR";
 
         jdbc = "jdbc:h2:" + filePath;
         jdbc = "jdbc:h2:" + filePath;
